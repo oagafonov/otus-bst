@@ -18,7 +18,6 @@ public class App {
     int counter = 1;
     int row = 0;
     while ((n = q.poll()) != null) {
-
       System.out.printf("%s ", n);
       if (counter == Math.pow(2, row)) {
         counter = 1;
@@ -33,17 +32,20 @@ public class App {
         q.add(n.right);
       }
     }
+    System.out.print("\n======================\n");
   }
 
   public static void main(String[] args) {
     Node bts = Node.create(20);
     bts.add(10);
-//    bts.add(9);
-    bts.add(12);
+    bts.add(30);
+    printUsingDFS(bts);
+    bts.add(15);
+    printUsingDFS(bts);
+    bts.add(17);
+    printUsingDFS(bts);
 //    bts.add(25);
 //    bts.add(22);
 //    bts.add(26);
-
-    printUsingDFS(bts);
   }
 }

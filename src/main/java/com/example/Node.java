@@ -83,4 +83,29 @@ public class Node {
   public String toString(){
     return String.format("%s-%s", this.equals(NIL) ? "NIL" : key.toString(), color);
   }
+
+  public boolean uncleIsRed() {
+    return parent.parent.left.isRed() || parent.parent.right.isRed();
+  }
+
+  public Node getUncle() {
+    return parent.isLeftChild() ? parent.parent.right : parent.parent.left;
+  }
+
+  public Node getGrandparent() {
+    return parent.parent;
+  }
+
+  public Node getRoot() {
+    Node t = this;
+    while (!t.isRoot()) {
+      t = t.parent;
+    }
+
+    return t;
+  }
+
+  public Node getParent() {
+    return parent;
+  }
 }
